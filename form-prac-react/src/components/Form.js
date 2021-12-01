@@ -43,7 +43,7 @@ const Form = () => {
         inputBlurHandler: ageBlurHandler,
         reset: resetAge,
     } = useInput(ageLimit)
-    
+
 
     let formIsValid = false;
 
@@ -105,6 +105,7 @@ const Form = () => {
                 onChange={ageChangeHandler}
                 onBlur={ageBlurHandler}
                 />
+                    {ageHasError && <p>Enter Valid age</p>}
             </div>
             </div>
             <div className="button">

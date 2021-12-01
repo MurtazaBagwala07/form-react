@@ -3,7 +3,7 @@ import useInput from '../hooks/use-input';
 
 const isNotEmpty = (value) => value.trim()!=='';
 const isEmail = (value) => value.includes('@');
-const ageLimit=(value) => Number(value)>18;
+const ageLimit=(value) => Number(value)>0;
 
 
 const Form = () => {
@@ -43,6 +43,7 @@ const Form = () => {
         inputBlurHandler: ageBlurHandler,
         reset: resetAge,
     } = useInput(ageLimit)
+    
 
     let formIsValid = false;
 
@@ -54,6 +55,7 @@ const Form = () => {
         event.preventDefault();
 
         if (!formIsValid) {
+            console.log('wrong bishh')
             return;
           }
       
@@ -106,7 +108,7 @@ const Form = () => {
             </div>
             </div>
             <div className="button">
-                <button disabled={!formIsValid}>Vote</button>
+                <button >Vote</button>
             </div>
         </form>
     )
